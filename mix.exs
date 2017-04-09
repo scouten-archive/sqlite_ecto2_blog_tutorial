@@ -14,7 +14,7 @@ defmodule Blog.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :sqlite_ecto2, :ecto]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,6 @@ defmodule Blog.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:sqlite_ecto2, "~> 2.0.0-dev.2"}]
   end
 end
