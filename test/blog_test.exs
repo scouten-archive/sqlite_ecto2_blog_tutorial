@@ -15,7 +15,7 @@ defmodule BlogTest do
   test "that everything works as it should" do
     # assert we can insert and query a user
     {:ok, author} = %User{name: "ludwig_wittgenstein", email: "sharp_witt@example.de"} |> Repo.insert
-    ["ludwig_wittgenstein"] = User |> select([user], user.name) |> Repo.all
+    assert ["ludwig_wittgenstein"] == User |> select([user], user.name) |> Repo.all
 
     # assert we can insert posts
     Repo.insert(%Post{user_id: author.id, title: "Tractatus", body: "Nothing to say."})
